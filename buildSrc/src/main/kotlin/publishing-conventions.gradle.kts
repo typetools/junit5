@@ -48,7 +48,7 @@ signing {
 
 tasks.withType<Sign>().configureEach {
 	onlyIf {
-		!isSnapshot // Gradle Module Metadata currently does not support signing snapshots
+		false
 	}
 }
 
