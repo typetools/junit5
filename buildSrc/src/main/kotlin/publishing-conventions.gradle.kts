@@ -5,7 +5,7 @@ plugins {
 }
 
 val isSnapshot = project.version.toString().contains("SNAPSHOT")
-val isContinuousIntegrationEnvironment = true
+val isContinuousIntegrationEnvironment = System.getenv("CI")?.toBoolean() ?: false
 
 val jupiterProjects: List<Project> by rootProject
 val platformProjects: List<Project> by rootProject
@@ -48,7 +48,7 @@ signing {
 
 tasks.withType<Sign>().configureEach {
 	onlyIf {
-		!isSnapshot // Gradle Module Metadata currently does not support signing snapshots
+		false
 	}
 }
 
