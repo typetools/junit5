@@ -5,7 +5,7 @@ plugins {
 }
 
 val isSnapshot = project.version.toString().contains("SNAPSHOT")
-val isContinuousIntegrationEnvironment = System.getenv("CI")?.toBoolean() ?: false
+val isContinuousIntegrationEnvironment = true
 
 val jupiterProjects: List<Project> by rootProject
 val platformProjects: List<Project> by rootProject
