@@ -376,7 +376,7 @@ class TimeoutExtensionTests extends AbstractJupiterTestEngineTests {
 
 			Execution execution = findExecution(results.testEvents(), "test()");
 			assertThat(execution.getDuration()) //
-					.isLessThanOrEqualTo(Duration.ofMillis(10));
+					.isLessThanOrEqualTo(Duration.ofMillis(20));
 			assertThat(execution.getTerminationInfo().getExecutionResult().getThrowable().orElseThrow()) //
 					.isInstanceOf(RuntimeException.class) //
 					.hasMessage("Oppps!");

@@ -1,6 +1,6 @@
 plugins {
 	`maven-publish`
-	signing
+	//signing
 	id("base-conventions")
 }
 
@@ -40,11 +40,11 @@ tasks.withType<PublishToMavenLocal>().configureEach {
 	dependsOn(tasks.build)
 }
 
-signing {
-	useGpgCmd()
-	sign(publishing.publications)
-	isRequired = !(isSnapshot || isContinuousIntegrationEnvironment)
-}
+//signing {
+	//useGpgCmd()
+	//sign(publishing.publications)
+	//isRequired = !(isSnapshot || isContinuousIntegrationEnvironment)
+//}
 
 tasks.withType<Sign>().configureEach {
 	onlyIf {
