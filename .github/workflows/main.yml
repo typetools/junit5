@@ -35,5 +35,3 @@ jobs:
           build
           jacocoRootReport
           prepareDocsForUploadToGhPages
-    - name: Upload to Codecov.io
-      uses: codecov/codecov-action@v2
